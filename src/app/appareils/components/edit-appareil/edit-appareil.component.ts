@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AppareilService } from '../services/appareil.service';
+import { AppareilService } from '../../services/appareil.service';
 import { Router } from '@angular/router';
 
 @Component({

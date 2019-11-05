@@ -1,5 +1,5 @@
-import { UserService } from './../services/user.service';
-import { User } from './../models/User.model';
+import { UserService } from '../../shared/user.service';
+import { User } from '../../models/User.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -23,7 +23,7 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.userService.emitUsers();
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
   this.userSubcription.unsubscribe();
 }
 }

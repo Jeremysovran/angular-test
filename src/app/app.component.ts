@@ -1,7 +1,7 @@
 import { environment } from './../environments/environment';
 import { AuthService } from './services/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { interval } from 'rxjs';
 import * as firebase from 'firebase';
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
     firebase.initializeApp(environment);
   }
 
-  ngOnInit(){
+  ngOnInit() {
     const counter = interval(1000);
     this.counterSubscription = counter.subscribe(
       (value: number) => {
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
     );
     firebase.auth().onAuthStateChanged(
       (user) => {
-       if(user) {
+       if (user) {
          this.isAuth = true;
        } else {
          this.isAuth = false;
